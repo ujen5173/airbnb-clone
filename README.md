@@ -14,7 +14,7 @@ This is airbnb clone using reactjs which has many features. I have not added bac
 
 ## Video of the Project
 
-![](public/project_images/video.mkv)
+You can view the project video from [Here](https://github.com/ujen5173/airbnb-clone/blob/main/public/project_images/video.mkv) or go to `public/project_images/video.mkv`
 
 ## Images of the Project
 
