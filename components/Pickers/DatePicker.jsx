@@ -5,11 +5,14 @@ import {
   eachDayOfInterval,
   endOfMonth,
   format,
+  isBefore,
+  isEqual,
   parse,
   startOfToday,
 } from "date-fns";
 import { v4 as uuidv4 } from "uuid";
-import { Button, days as Days } from "../../utils/datePickerUtils";
+import { days as Days } from "../../utils/datePickerUtils";
+import Button from "../Button";
 
 const DatePicker = ({
   selectedDay,
@@ -54,6 +57,8 @@ const DatePicker = ({
     setNextMonth(firstDayNextNextMonth);
   }
 
+  // const [buttonClicked, setButtonClicked] = useState(0);
+
   return (
     <div
       className={`${
@@ -61,6 +66,22 @@ const DatePicker = ({
         "date-picker w-full relative z-10 mx-auto shadow border border-gray-300 bg-white rounded-3xl px-8 py-8"
       }`}
     >
+      {/* <div className="flex gap-2"> */}
+      {/* <h1 className="text-md font-semibold px-4 py-2 rounded-md border border-gray-500"> */}
+      {/* Selected Date:{" "} */}
+      {/* {(selectedDay && format(selectedDay, "dd/MM/yyyy")) || "N/A"} */}
+      {/* </h1> */}
+      {/* <h1 className="text-md font-semibold px-4 py-2 rounded-md border border-gray-500"> */}
+      {/* Button Clicked: {buttonClicked} */}
+      {/* </h1> */}
+      {/* <h1 className="text-md font-semibold px-4 py-2 rounded-md border border-gray-500"> */}
+      {/* Ended Date: {(selectEnd && format(selectEnd, "dd/MM/yyyy")) || "N/A"} */}
+      {/* </h1> */}
+      {/* <h1 className="text-md font-semibold px-4 py-2 rounded-md border border-gray-500"> */}
+      {/* Mouse Entered:{" "} */}
+      {/* {(hoveredDate && format(hoveredDate, "dd/MM/yyyy")) || "N/A"} */}
+      {/* </h1> */}
+      {/* </div> */}
       <div className="flex gap-6">
         <div className="w-full">
           <div className="flex items-center">
@@ -68,7 +89,6 @@ const DatePicker = ({
               {format(firstDayCurrentMonth, "MMMM yyyy")}
             </h2>
           </div>
-
           <div className="grid grid-cols-7 mt-10 text-xs leading-6 font-semibold text-center text-gray-500">
             {Days.map((day) => (
               <div key={uuidv4()}>{day}</div>
@@ -88,12 +108,12 @@ const DatePicker = ({
                   dayIdx={dayIdx}
                   setHoveredDate={setHoveredDate}
                   hoveredDate={hoveredDate}
+                  // setButtonClicked={setButtonClicked}
                 />
               );
             })}
           </div>
         </div>
-
         {/* month + 1 */}
         <div className="w-full">
           <div className="flex items-center">
