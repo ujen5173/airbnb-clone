@@ -23,6 +23,7 @@ const Date_GuestsPickerCard = React.forwardRef(
     ref
   ) => {
     const router = useRouter();
+    console.count("Card");
 
     return (
       <div className="sticky top-28 left-0 min-w-[25rem]">

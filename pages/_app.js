@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Times from "../public/_svgs/Times";
 import "../styles/globals.css";
 
 export const Context = React.createContext();

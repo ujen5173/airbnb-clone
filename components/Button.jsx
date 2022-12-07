@@ -1,6 +1,5 @@
 import { classNameInit, classNames } from "../utils/datePickerUtils";
 import { format, isBefore, isEqual, isPast, isToday } from "date-fns";
-import { memo, useMemo } from "react";
 
 const Button = ({
   selectedDay,
@@ -11,9 +10,7 @@ const Button = ({
   dayIdx,
   hoveredDate,
   setHoveredDate,
-  // setButtonClicked,
 }) => {
-  console.log("Re-rendered");
   return (
     <div
       key={day.toString()}
@@ -30,7 +27,6 @@ const Button = ({
         onMouseMove={() => setHoveredDate(day)}
         disabled={isPast(day) && !isToday(day) ? true : false}
         onClick={async () => {
-          // setButtonClicked((Math.random() * 999).toFixed(2));
           selectedDay === null && setSelectedDay(day);
 
           if (isBefore(day, selectedDay)) {
@@ -63,4 +59,4 @@ const Button = ({
   );
 };
 
-export default memo(Button);
+export default Button;

@@ -8,11 +8,13 @@ const CheckinCheckOut = ({ setSelection, rounded, selectedDay, selectEnd }) => {
   });
 
   useEffect(() => {
-    setDates({ selectedDay, selectEnd });
-    setDates({
-      selectedDay: format(selectedDay, "MM/dd/yyyy"),
-      selectEnd: format(selectEnd, "MM/dd/yyyy"),
-    });
+    if (selectedDay && selectEnd) {
+      setDates({ selectedDay, selectEnd });
+      setDates({
+        selectedDay: format(selectedDay, "MM/dd/yyyy"),
+        selectEnd: format(selectEnd, "MM/dd/yyyy"),
+      });
+    }
   }, [selectedDay, selectEnd]);
 
   return (

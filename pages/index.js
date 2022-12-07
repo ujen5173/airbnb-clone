@@ -2,7 +2,6 @@ import { useContext, useState } from "react";
 import { Header, Posts } from "../components";
 import Head from "next/head";
 import { Context } from "./_app";
-import Times from "../public/_svgs/Times";
 import Wishlist from "../components/Wishlist";
 
 const Home = () => {

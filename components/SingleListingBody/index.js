@@ -114,6 +114,8 @@ const SingleListingBody = ({ listing }) => {
     }
   }, [ImagesRef.current]);
 
+  console.count("Index");
+
   return (
     <>
       {imageViewer && (
@@ -275,6 +277,7 @@ const SingleListingBody = ({ listing }) => {
 export default SingleListingBody;
 
 const ImageSlider = ({ listing }) => {
+  // console.log("Image slider re-rendered");
   return (
     <div className="w-full min-h-[30vh]">
       {listing.data?.images && (
